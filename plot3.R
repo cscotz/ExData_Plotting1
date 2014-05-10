@@ -8,22 +8,27 @@ rm(data)
 
 png(filename="plot3.png",  width = 480, height = 480)
 with(filtered, {
+     #Graph 3, Line 1
      plot(dateTime, as.numeric(Sub_metering_1), 
           type="l",
           col="black",
           ylab="Energy sub metering", 
           xlab="")
-
+     
+     #Graph 3, Line 2
      lines(dateTime, as.numeric(Sub_metering_2),
            type="l",
            col="red")
-
+     
+     #Graph 3, Line 3
      lines(dateTime, as.numeric(Sub_metering_3),
            type="l",
            col="blue")
+     
+     #Graph 3 Legend
+     legend("topright", 
+            legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
+            col=c("black", "red", "blue"),
+            lty=1)
 })
-legend("topright", 
-       legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
-       col=c("black", "red", "blue"), 
-       lty=1)
 dev.off()
