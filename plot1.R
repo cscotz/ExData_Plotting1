@@ -6,5 +6,8 @@ dateTime <- strptime(dateTime,"%d/%m/%Y %H:%M:%S")
 filtered <- cbind(dateTime, filtered[,-c(1:2)])
 
 png(filename="plot1.png",  width = 480, height = 480)
-hist(as.numeric(as.character(filtered$Global_active_power)), xlab="Global Active Power (kilowatts)", main="Global Active Power", col="red")
+hist(as.numeric(as.character(filtered$Global_active_power)), 
+     xlab="Global Active Power (kilowatts)", 
+     main="Global Active Power", 
+     col="red")
 dev.off()
